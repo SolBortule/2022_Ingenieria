@@ -130,7 +130,6 @@ def grspline3(S, coef, p, d=0):
         for j in range(p):
             f[i, j] = coef[0, i]*(X[j]-x[i])**3+coef[1, i]*(X[j]-x[i])**2+coef[2, i]*(X[j]-x[i])+coef[3, i]
         plt.plot(X, f[i, :])
-
     if d == 1:
         fd = np.zeros([np.size(coef, 1), p])
         for i in range(n):
