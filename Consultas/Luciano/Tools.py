@@ -123,14 +123,14 @@ def grspline3(S, coef, p, d=0):
     # d = 1 gráfica f'(x)
     x = S[:, 0]
     n = np.size(coef, 1)  # cantidad de parabolas
-
     f = np.zeros([np.size(coef, 1), p])
+    xa = []
     for i in range(n):  # habrá n-1 parabolas
         X = np.linspace(x[i], x[i+1], p)  # cantidad de puntos que forman cada parabola
         for j in range(p):
             f[i, j] = coef[0, i]*(X[j]-x[i])**3+coef[1, i]*(X[j]-x[i])**2+coef[2, i]*(X[j]-x[i])+coef[3, i]
         plt.plot(X, f[i, :])
-
+        xa.append(X)
     if d == 1:
         fd = np.zeros([np.size(coef, 1), p])
         for i in range(n):
@@ -140,6 +140,6 @@ def grspline3(S, coef, p, d=0):
             plt.plot(X, fd[i, :])
 
     if d == 1:
-        return fd, plt.show()
+        return xa, fd, plt.show()
     elif d == 0:
-        return f, plt.show()
+        return xa, f, plt.show()
