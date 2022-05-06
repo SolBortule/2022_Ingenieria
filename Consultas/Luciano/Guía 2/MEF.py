@@ -48,15 +48,25 @@ def Kel_barra(MN, MC, Ee, Ae, e):
                    [-c*s,-s**2,c*s,s**2]])
 
     return Ke
-    
+
+import pdb
+
 def Kglobal_barra(MN, MC, E, A, Ne, Nn, glxn):
     """
     Resuelve la matriz global K 
     """
+    # para poder debuguear las matrices, vamos a guardarlas en un archivo.
     K = np.zeros([glxn*Nn,glxn*Nn])            
+    matricesfile = 'MatricesElementales.dat'
+    with open(matricesfile,'w') as f:
+        f.write('Matrices Elementales\n ===============')
     for e in range(Ne):
         Ke = Kel_barra(MN, MC, E[e], A[e], e)
-
+        fe = np.abs(Ke.max())
+        Ke[np.abs(Ke/fe) < 1e-15] = 0
+        with open(matricesfile,'a') as f:
+            f.write(f'\nelemento {e}, fe ={fe:4e}\n')
+            f.write(f'{Ke/fe}\n')
         for i in range(glxn):
             rangoi = np.linspace(i*glxn,(i+1)*glxn-1,glxn).astype(int)
             rangoni = np.linspace(MC[e,i]*glxn,(MC[e, i]+1)*glxn-1,glxn).astype(int)
