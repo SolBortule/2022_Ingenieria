@@ -1,12 +1,12 @@
 import numpy as np
 
-def solve(K, r, s, Us, Fr):
+def solve1D(K, r, s, Us, Fr):
     """
     #
     Se deben ingresar:
     K = matriz global de constantes elásticas
-    r = posicion de los desplazamientos conocidos
-    s = posición de los desplazamientos desconocidos (fuerzas conocidas)
+    r = posicion de los desplazamientos desconocidos (fuerzas conocidas)
+    s = posición de los desplazamientos conocidos 
     Us = valor de los desplazamientos conocidos 
     Fr = valor de las fuerzas conocidas
     
@@ -30,12 +30,14 @@ def solve(K, r, s, Us, Fr):
 
 def Kel_barra(MN, MC, Ee, Ae, e):
     """
+    #
     Resuelve la matriz K_elemental de un elemento 'e'
     MN = Coordenadas de cada nodo
     MC = Matriz de conectividad de las barras
     Ee = Modulo de elasticidad de 'e'
     Ae = Sección de 'e'
     e = Nro. de elemento
+    #
     """ 
     Le = np.sqrt((MN[MC[e,1],0]-MN[MC[e,0],0])**2+(MN[MC[e,1],1]-MN[MC[e,0],1])**2)
     phi = np.arctan2(MN[MC[e,1],1]-MN[MC[e,0],1],MN[MC[e,1],0]-MN[MC[e,0],0])
@@ -46,27 +48,36 @@ def Kel_barra(MN, MC, Ee, Ae, e):
                    [c*s,s**2,-c*s,-s**2],
                    [-c**2,-c*s,c**2,c*s],
                    [-c*s,-s**2,c*s,s**2]])
+    Ke[np.abs(Ke/Ke.max()) < 1e-15] = 0
 
     return Ke
-
-import pdb
-
-def Kglobal_barra(MN, MC, E, A, Ne, Nn, glxn):
+    
+def Kglobal_barra(MN, MC, E, A, glxn):
     """
-    Resuelve la matriz global K 
+    #
+    Resuelve la matriz global K
+    MN = Coordenadas de cada nodo
+    MC = Matriz de conectividad de las barras
+    E = Vector Modulos de Elasticidad de cada elementos
+    A = Vector Sección de cada elemento
+
+    #
     """
-    # para poder debuguear las matrices, vamos a guardarlas en un archivo.
-    K = np.zeros([glxn*Nn,glxn*Nn])            
-    matricesfile = 'MatricesElementales.dat'
-    with open(matricesfile,'w') as f:
+    Ke = {}  # diccionario para acumular todas las K_elementales
+    Nn = MN.shape[0]  # cantidad de nodos
+    Ne = MC.shape[0]  # cantidad de elementos
+    K = np.zeros([glxn*Nn,glxn*Nn])
+    archivo = 'Matrices.txt'  # Creo archivo para guardar todas las matrices elementales
+    with open(archivo,'w') as f:  # la f es como un alias apra el archivo que acabo de abrir
         f.write('Matrices Elementales\n ===============')
+
     for e in range(Ne):
-        Ke = Kel_barra(MN, MC, E[e], A[e], e)
-        fe = np.abs(Ke.max())
-        Ke[np.abs(Ke/fe) < 1e-15] = 0
-        with open(matricesfile,'a') as f:
+        Ke[e] = Kel_barra(MN, MC, E[e], A[e], e)
+        fe = np.abs(Ke[e].max())
+        with open('Matrices.txt','a') as f:  # 'a' de agregar
             f.write(f'\nelemento {e}, fe ={fe:4e}\n')
-            f.write(f'{Ke/fe}\n')
+            f.write(f'{Ke[e]/fe}\n')
+
         for i in range(glxn):
             rangoi = np.linspace(i*glxn,(i+1)*glxn-1,glxn).astype(int)
             rangoni = np.linspace(MC[e,i]*glxn,(MC[e, i]+1)*glxn-1,glxn).astype(int)
@@ -74,5 +85,15 @@ def Kglobal_barra(MN, MC, E, A, Ne, Nn, glxn):
                 rangoj = np.linspace(j*glxn,(j+1)*glxn-1,glxn).astype(int)
                 rangonj = np.linspace(MC[e,j]*glxn,(MC[e, j]+1)*glxn-1,glxn).astype(int)
 
-                K[np.ix_(rangoni,rangonj)] += Ke[np.ix_(rangoi,rangoj)]
-    return K
+                K[np.ix_(rangoni,rangonj)] += Ke[e][np.ix_(rangoi,rangoj)]
+    
+    fe = np.abs(K.max())
+    with open('Matrices.txt','a') as f:  # 'a' de agregar
+        f.write(f'\nMatriz Global, fe ={fe:4e}\n')
+        f.write(f'{K/fe}\n')
+            
+    return K, Ke
+
+def vector_complemento(s, MN, glxn):
+    r = np.array([i for i in range(glxn*MN.shape[0]) if i not in s])
+    return r
