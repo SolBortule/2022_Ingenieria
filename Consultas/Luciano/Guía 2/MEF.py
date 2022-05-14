@@ -119,17 +119,13 @@ def dist_uniforme_barra(A, E, C, L, barras, glxn=1, Nnxe=2):
     #
     '''
     MC = np.array([[i, i+1] for i in range(barras)])
-    MN = np.zeros([barras+1]).reshape([-1,1])
-    sum = 0
-    for i in range(barras+1):
-        MN[i] = sum
-        sum += L/barras
+    MN = np.linspace(0,L,barras+1).reshape([-1,1])
    
     # Matriz global
     Kglobal = Kglobal_barra(MN, MC, E, A, glxn)[0]
     
     # barra 1
-    Ft = 0.5*C*(L/barras)**2
+    Ft = 0.5*C*(L/barras)**2  # fuerza total en la barra 1
     f1x = Ft/3  # como se distribuyen las cargas en cada nodo del elemento 1
     f2x = 2*Ft/3  # considerar el area del triangulo
 
@@ -151,4 +147,4 @@ def dist_uniforme_barra(A, E, C, L, barras, glxn=1, Nnxe=2):
         eps[i] = (d[i+1]-d[i])/(L/barras)
         tensiones[i] = eps[i]*E
     
-    return f, d, Rx, tensiones
+    return f, d, Rx, tensiones, Kglobal
