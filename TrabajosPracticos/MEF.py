@@ -31,7 +31,7 @@ def solve1D(K, r, s, Us, Fr):
 def Kel_barra(MN, MC, Ee, Ae, e):
     """
     #
-    Resuelve la matriz K_elemental de un elemento 'e'
+    Resuelve la matriz K_elemental de un elemento 'e' y devuelve también la longitud inicial del elemento
     MN = Coordenadas de cada nodo
     MC = Matriz de conectividad de las barras
     Ee = Modulo de elasticidad de 'e'
