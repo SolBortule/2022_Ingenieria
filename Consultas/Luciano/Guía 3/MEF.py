@@ -7,13 +7,13 @@ def solve(K, r, s, Us, Fr):
     K = matriz global de constantes elásticas
     r = posicion de los desplazamientos desconocidos (fuerzas conocidas)
     s = posición de los desplazamientos conocidos 
-    Us = valor de los desplazamientos conocidos 
-    Fr = valor de las fuerzas conocidas
+    Us = valor de los desplazamientos conocidos [vector columnar]
+    Fr = valor de las fuerzas conocidas [vector columnar]
     
     mef.solve devuelve 2 vectores, uno con las fuerzas en cada nodo (F) y otro con los desplazamientos respectivamente (U)
     #
     """
-    N=np.shape(K)[1]  # Nro. de nodos
+    N=np.shape(K)[1]  # Nro. de nodos * glxn
     F = np.zeros([N,1])
     U = np.zeros([N,1])
     U[s] = Us
