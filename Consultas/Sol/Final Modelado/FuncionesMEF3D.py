@@ -2,7 +2,7 @@ import numpy as np
 #Para sacar los menores de la matriz y calcular los determinantes:
 def Menores_Det(SeisV, i, j):
     Menor = np.delete(np.delete(SeisV,i,axis=0), j, axis=1)
-    Det_Menor=np.abs(np.linalg.det(Menor))
+    Det_Menor=np.linalg.det(Menor)
     
     return Det_Menor
 
