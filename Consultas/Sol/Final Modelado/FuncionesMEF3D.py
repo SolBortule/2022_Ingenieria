@@ -8,20 +8,20 @@ def Menores_Det(SeisV, i, j):
 
 def Ensamblado_Matriz_Global(MN, MC, Me, glxn):
 
-	Nn = MN.shape[0]  # Número de nodos
-	Ne, Nnxe = MC.shape  # Ne: Número de elementos, # Número de nodos x elemento
+    Nn = MN.shape[0]  # Número de nodos
+    Ne, Nnxe = MC.shape  # Ne: Número de elementos, # Número de nodos x elemento
 
-	Matriz_Global = np.zeros([glxn * Nn, glxn * Nn])
-	for element in range(Ne):
-		for i in range(Nnxe):
-			indices_i = np.linspace(i * glxn, (i + 1) * glxn - 1, Nnxe).astype(int)
-			rangoni = np.linspace(MC[element, i] * glxn, (MC[element, i] + 1) * glxn - 1, Nnxe).astype(int)
-			for j in range(Nnxe):
-				indices_j = np.linspace(j * glxn, (j + 1) * glxn - 1, Nnxe).astype(int)
-				rangonj = np.linspace(MC[element, j] * glxn, (MC[element, j] + 1) * glxn - 1, Nnxe).astype(int)
-				Matriz_Global[np.ix_(rangoni, rangonj)] += Me[np.ix_(indices_i, indices_j)]
+    Matriz_Global = np.zeros([glxn * Nn, glxn * Nn])
+    for element in range(Ne):
+        for i in range(Nnxe):
+            indices_i = np.linspace(i * glxn, (i + 1) * glxn - 1, Nnxe).astype(int)
+            rangoni = np.linspace(MC[element, i] * glxn, (MC[element, i] + 1) * glxn - 1, Nnxe).astype(int)
+            for j in range(Nnxe):
+                indices_j = np.linspace(j * glxn, (j + 1) * glxn - 1, Nnxe).astype(int)
+                rangonj = np.linspace(MC[element, j] * glxn, (MC[element, j] + 1) * glxn - 1, Nnxe).astype(int)
+                Matriz_Global[np.ix_(rangoni, rangonj)] += Me[np.ix_(indices_i, indices_j)]
 
-	return Matriz_Global
+    return Matriz_Global
 
 def solve(KGlobal, s,r, Us, Fr):
     N = KGlobal.shape[1]
