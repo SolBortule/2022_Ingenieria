@@ -37,4 +37,32 @@ Propagación de una fisura.
 - luego se mete con el KIC, pero no lo esta aplicando realmente sino que calcula de antemano la long cr'itica 
 dado KIC , el material y la tensi'on remota.
 
+# Sol Bortulé (8)
 
+modelo elástico 3d
+
+- la interpolacion en alfa, beta, gamma son las mismas en las tres direcciones
+- lamentablemente no le dio el resultado.
+- modelo de un arco simplificado (bien)
+
+
+# Tomas Rabago (9)
+
+- difusion de neutrones 
+- aplica ising para ver si el neutron se transmite o no.
+- obtiene distribución de neutrones en funcion del espesor de una pared
+
+# (nombre) 
+
+- modelo de potts de crecimiento de grano
+- el programa debe estar bien pero no hizo suficientes pasos montecarlo
+
+# Mauro Vaca 
+
+- modelizacion de temperatura
+- toma ina chapa como aproximación
+- solo variación de t por transmisión
+
+# Augusto
+
+- modelo micromecánico de un material reforzado for fibras
