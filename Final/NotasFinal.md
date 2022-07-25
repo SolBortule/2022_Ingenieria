@@ -50,6 +50,13 @@ Propagación de una fisura.
 - luego se mete con el KIC, pero no lo esta aplicando realmente sino que calcula de antemano la long cr'itica 
 dado KIC , el material y la tensi'on remota.
 
+## Informe
+
+- el informe esta bien pero podría usar explicaciones más técnicas. 
+- Hizo una animación haciendo de cuenta que cada iteración de prueba es un paso temporal pero eso esta mal.
+
+
+
 # Sol Bortulé (8)
 
 modelo elástico 3d
