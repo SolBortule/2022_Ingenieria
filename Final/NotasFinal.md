@@ -22,7 +22,7 @@ Modelo de ising para aleaciones binarias.
 - en ningún momento menciona los pasos montecarlo utilizados.
 - no hace estudio vs tamaño y vs num de pasos montecarlo
 
-# alejandro Szaban (10)
+# Alejandro Szaban (9)
 
 sft con impurezas
 
@@ -33,6 +33,10 @@ comments:
  - la energia de formacion del puro es cero.
  - los puntos k en la supercelda pueden ser menos.
  - comparar las curvas ef-v para ver convergencia.
+
+## Informe
+
+- esta bastante bien salvo algunos errores de redacción.
 
 # Luciano
 Propagación de una fisura.
