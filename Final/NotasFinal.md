@@ -1,9 +1,12 @@
 # Fernando Ruiz (9)
 
+## Presentacion
 - intro a dft con un par de ideas (algunas equivocadas)
 - demasiados decimales en el parámetros de red. curva E-V con solo una mitad.a
 - dejó escrita la diapositiva en función de la variable de
 - comparacion con referencia ?
+
+## Informe
 
 # Lucca Piancatelli (10)
 
