@@ -8,7 +8,7 @@
 
 ## Informe
 
-# Lucca Piancatelli (10)
+# Lucca Piancatelli (9)
 
 Modelo de ising para aleaciones binarias.
 
@@ -16,11 +16,17 @@ Modelo de ising para aleaciones binarias.
 - no ve coalescencia? nucleacion ? Sí: le cambio el signoaa
 - muy bien
 
-# alejandro (10)
+## Informe
 
-dft con impurezas
+- está bien,
+- en ningún momento menciona los pasos montecarlo utilizados.
+- no hace estudio vs tamaño y vs num de pasos montecarlo
 
-- buena ontro    
+# alejandro Szaban (10)
+
+sft con impurezas
+
+- buena intro
 - DFT es ab initio
 
 comments: 
