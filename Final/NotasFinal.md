@@ -77,16 +77,29 @@ modelo elástico 3d
 - aplica ising para ver si el neutron se transmite o no.
 - obtiene distribución de neutrones en funcion del espesor de una pared
 
-# (nombre) 
+## Informe
+
+- al 27/7 no entregó o no tengo informe.
+
+
+
+# (nombre) Santiago Fernandez (7)
 
 - modelo de potts de crecimiento de grano
 - el programa debe estar bien pero no hizo suficientes pasos montecarlo
+
+## Informe
+
+- no realiza suficientes pasos montecarlo
+- usa barridos en lugar de elección al azar de elementos
 
 # Mauro Vaca 
 
 - modelizacion de temperatura
 - toma ina chapa como aproximación
 - solo variación de t por transmisión
+
+## Informe
 
 # Augusto
 
