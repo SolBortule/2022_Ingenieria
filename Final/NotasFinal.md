@@ -37,6 +37,7 @@ comments:
 ## Informe
 
 - esta bastante bien salvo algunos errores de redacción.
+- Le pedimos que corrija grafico con curvas aumentadas. -> pasar a paneles.
 
 # Luciano
 Propagación de una fisura.
@@ -80,6 +81,8 @@ modelo elástico 3d
 ## Informe
 
 - al 27/7 no entregó o no tengo informe.
+- se lo habia entregado a ruben y estaba en la carpeta
+- se copió el código de un libro.
 
 
 
@@ -93,10 +96,11 @@ modelo elástico 3d
 - no realiza suficientes pasos montecarlo
 - usa barridos en lugar de elección al azar de elementos
 
+
 # Mauro Vaca (7)
 
 - modelizacion de temperatura
-- toma ina chapa como aproximación
+- toma una chapa como aproximación
 - solo variación de t por transmisión
 
 ## Informe
