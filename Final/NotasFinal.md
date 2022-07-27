@@ -93,7 +93,7 @@ modelo elástico 3d
 - no realiza suficientes pasos montecarlo
 - usa barridos en lugar de elección al azar de elementos
 
-# Mauro Vaca 
+# Mauro Vaca (7)
 
 - modelizacion de temperatura
 - toma ina chapa como aproximación
@@ -101,6 +101,13 @@ modelo elástico 3d
 
 ## Informe
 
+- no explica aproximaciones
+- no explica todos los términos en la ecuación
+
 # Augusto
 
 - modelo micromecánico de un material reforzado for fibras
+
+## Informe
+
+- no entrega informe, solo un ppt con los resultados
