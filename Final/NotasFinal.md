@@ -65,6 +65,11 @@ modelo elástico 3d
 - lamentablemente no le dio el resultado.
 - modelo de un arco simplificado (bien)
 
+## Informe
+
+- no entrega informe, solo presentación en ppt y notebooks. de esos notebooks solo funciona 1.
+
+
 
 # Tomas Rabago (9)
 
