@@ -1,4 +1,4 @@
-﻿Template Carta 
+# Template Carta 
 Estimado _nombre_
 
 
@@ -24,10 +24,10 @@ Saludos y buena continuación de la carrera!!
 
 
 —----------------------------------------------------------------------------
-# Notas finales 
+Notas finales 
 
 
-Luciano
+# Luciano
 
 
 - tps bien
@@ -36,7 +36,7 @@ Luciano
 
 
 10 
-Carta
+## Carta
 
 
 Estimado Luciano,
@@ -64,7 +64,7 @@ Saludos y buena continuación de la carrera!!
    Mariano y Ruben
 
 
-Alejandro
+# Alejandro
 
 
 - tps bien
@@ -73,7 +73,7 @@ Alejandro
 
 
 10
-Carta
+## Carta
 
 
 Estimado Alejandro
@@ -102,7 +102,7 @@ Saludos y buena continuación de la carrera!!
 
 
 
-Fernando
+# Fernando
 
 
 - tps bien
@@ -111,7 +111,8 @@ Fernando
 
 
 10
-Carta 
+
+## Carta 
 
 
 Como nota final de Modelización de Materiales te quedaría un 10 (diez).
@@ -135,7 +136,7 @@ Saludos y buena continuación de la carrera!!
    Mariano y Ruben
 
 
-Augusto
+# Augusto
 
 
 - tp1 bien,
@@ -144,7 +145,9 @@ Augusto
 
 
 10
-Carta
+
+## Carta
+
 Estimado Augusto
 
 
@@ -166,7 +169,7 @@ Saludos y buena continuación de la carrera!!
 
 
 
-Lucca
+# Lucca
 
 
 - Tps bien
@@ -175,7 +178,9 @@ Lucca
 
 
 9
-Carta
+
+## Carta
+
 Estimado Lucca
 
 
@@ -198,7 +203,8 @@ Saludos y buena continuación de la carrera!!
 
 
    Mariano y Ruben
-Sol
+   
+# Sol
 
 
 - Tps bien
@@ -210,7 +216,8 @@ Sol
 Si corrige el codigo 9
 
 
-Carta
+## Carta
+
 Estimada Sol
 
 
@@ -227,7 +234,8 @@ Saludos y buena continuación de la carrera!!
 
 
    Mariano y Ruben
-Santiago
+
+## Santiago
 
 
 - final con algún problema de interpretación.
@@ -238,7 +246,8 @@ Santiago
 8
 
 
-Carta
+## Carta
+
 Estimado Santiago
 
 
@@ -263,12 +272,14 @@ Saludos y buena continuación de la carrera!!
    Mariano y Ruben
 
 
-Flavio
+# Flavio
 - Tps bien
 - poca participacion en clase
 - Final Bien
 8
-Carta
+
+# Carta
+
 Estimado Flavio
 
 
